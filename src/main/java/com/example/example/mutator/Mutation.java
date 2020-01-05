@@ -4,17 +4,16 @@ import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.example.example.event.Application;
 import com.example.example.exception.ApplicationNotFoundException;
 import com.example.example.repository.ApplicationRepository;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
 @Component
+@RequiredArgsConstructor
 public class Mutation implements GraphQLMutationResolver {
     private ApplicationRepository applicationRepository;
-
-    public Mutation(ApplicationRepository applicationRepository) {
-        this.applicationRepository = applicationRepository;
-    }
 
     public Application newApplication(String applicationName, String applicationSealId,
                                       String applicationOwner, String applicationEmailId) {

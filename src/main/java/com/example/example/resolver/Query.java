@@ -12,12 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-@NoArgsConstructor
 @AllArgsConstructor
 public class Query implements GraphQLQueryResolver {
-    @Autowired
     private ApplicationRepository applicationRepository;
-    @Autowired
     private ReleaseRepository releaseRepository;
 
 

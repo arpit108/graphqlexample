@@ -8,8 +8,8 @@ import javax.persistence.*;
 @Table(name = "Release")
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 public class Release {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

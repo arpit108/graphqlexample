@@ -2,13 +2,14 @@ package com.example.example.controller;
 
 import com.example.example.event.Application;
 import com.example.example.service.ApplicationService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/application")
+@RequiredArgsConstructor
 public class ApplicationController {
-    @Autowired
+
     private ApplicationService applicationService;
 
     @GetMapping
