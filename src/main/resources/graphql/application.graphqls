@@ -1,0 +1,29 @@
+type Application {
+  id: ID!
+  applicationName: String!
+  applicationSealId: String!
+  applicationOwner: String!
+  applicationEmailId: String!
+}
+
+type Release
+{
+  id: ID!
+  version: String!
+  application: Application!
+}
+
+
+
+type Query {
+  findAllApplications: [Application]!
+  countApplications: Long!
+  findAllRelease: [Release]!
+
+}
+
+type Mutation {
+  newApplication(applicationName: String!, applicationSealId: String!, applicationOwner: String!, applicationEmailId: String!) : Application!
+  deleteApplication(id:ID!) : Boolean
+  updateApplicationOwner(applicationSealId: String!, id:ID!) : Application!
+}
